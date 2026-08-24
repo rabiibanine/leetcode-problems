@@ -1,3 +1,3 @@
-carry = 1
-if carry:
-    print(not carry)
+arr = [1, 2, 3]
+
+print(max(int(bool(None)), -1))

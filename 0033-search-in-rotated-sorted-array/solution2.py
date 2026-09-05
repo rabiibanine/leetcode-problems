@@ -12,24 +12,25 @@ class Solution:
         i = self.binary_search(0, len(array), array, lambda x: x < array[0])
         return i if i < len(array) else -1
 
-    def find_first(self, target, array):
-        i = self.binary_search(0, len(array), array, lambda x: x >= target)
-        return i if i < len(array) and array[i] == target else -1
-
     def search(self, nums, target):
         rotation_point = self.find_rotation_point(nums)
-        new_array = nums[rotation_point:] + nums[:rotation_point]
-        target_index = self.find_first(target, new_array)
-        if target_index == -1:
-            return -1
-        final_index = (rotation_point + target_index) % len(nums)
+        lo = 0
+        hi = len(nums)
+        while lo < hi:
+            mid = (rotation_point + lo + (hi - lo) // 2) % len(nums)
+            if nums[mid] >= target:
+                hi = mid
+            else:
+                lo = mid + 1
+        final_index = lo if lo < len(nums) and nums[lo] == target else -1
         return final_index
 
     def test(self):
         array1 = [4, 5, 6, 7, 0, 1, 2]
         array2 = [4, 5, 6, 7, 8, 0, 2]
         array3 = [3, 1]
-        print(self.search(array3, 3))
+        print(self.search(array3, 3), ", expected: 0")
+        print(self.search(array1, 1), ", expected: 5")
 
 
 solution = Solution()

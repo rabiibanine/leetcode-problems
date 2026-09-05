@@ -1,8 +1,5 @@
-from typing import List
-
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         for i in nums:
             index_i = nums.index(i)
             for j in nums[index_i:]:
@@ -16,5 +13,6 @@ class Solution:
 
 
 solution1 = Solution()
+
 
 solution1.test()

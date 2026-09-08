@@ -1,9 +1,8 @@
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
-        for i in nums:
-            index_i = nums.index(i)
-            for j in nums[index_i:]:
-                if i + j == target:
+        for i in range(len(nums)):
+            for j in range(i + 1, len(nums)):
+                if nums[i] + nums[j] == target:
                     return [i, j]
         return [0, 0]
 
@@ -12,7 +11,6 @@ class Solution:
         print(self.twoSum(array, 9))
 
 
-solution1 = Solution()
+solution = Solution()
 
-
-solution1.test()
+solution.test()

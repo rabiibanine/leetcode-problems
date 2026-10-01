@@ -1,5 +1,4 @@
-from utils.LinkedList import LinkedList
-from utils.Node import Node
+from common.linked_list import LinkedList
 
 
 class Solution:

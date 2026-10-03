@@ -2,7 +2,7 @@ from typing import final
 
 
 @final
-class Node:
+class ListNode:
     def __init__(self, data=0, next=None):
         self.val = data
         self.next = next

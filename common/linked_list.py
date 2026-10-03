@@ -1,6 +1,6 @@
 from typing import final, override
 
-from common.node import Node
+from common.node import ListNode
 
 
 @final
@@ -43,14 +43,14 @@ class LinkedList:
     def append(self, data):
 
         if not self.head:
-            self.head = Node(data)
+            self.head = ListNode(data)
             return
 
         current = self.head
         while current.next != None:
             current = current.next
 
-        current.next = Node(data)
+        current.next = ListNode(data)
 
 
 if __name__ == "__main__":

@@ -8,13 +8,12 @@ class Solution:
     ) -> ListNode | None:
         if not list1 or not list2:
             return list1 or list2
+        if list1.val <= list2.val:
+            list1.next = self.mergeTwoLists(list1.next, list2)
+            return list1
         else:
-            if list1.val < list2.val:
-                list1.next = self.mergeTwoLists(list1.next, list2)
-                return list1
-            else:
-                list2.next = self.mergeTwoLists(list1, list2.next)
-                return list2
+            list2.next = self.mergeTwoLists(list1, list2.next)
+            return list2
 
     def test(self):
         list1 = LinkedList(elements=[1, 3, 5])

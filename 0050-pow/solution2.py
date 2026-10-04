@@ -15,7 +15,7 @@ class Solution:
         curr_product_pow = 0
 
         while curr_product_pow < n:
-            if curr_pow * 2 > n:
+            if curr_pow * curr_product_pow > n:
                 curr_pow //= 2
                 continue
 
@@ -25,12 +25,12 @@ class Solution:
         return product if sign else 1 / product
 
     def test(self):
-        # print(self.myPow(3, 0))
+        print(self.myPow(3, 0))
         print(self.myPow(3, 1))
-        # print(self.myPow(3, 2))
-        # print(self.myPow(3, 3))
-        # print(self.myPow(3, -3))
-        # print(self.myPow(3, 24))
+        print(self.myPow(3, 2))
+        print(self.myPow(3, 3))
+        print(self.myPow(3, -3))
+        print(self.myPow(3, 24))
 
 
 solution = Solution()

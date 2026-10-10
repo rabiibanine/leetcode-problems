@@ -1,5 +1,6 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
+<<<<<<< HEAD
         if n <= 0:
             return 0
         elif n == 1:
@@ -15,6 +16,12 @@ class Solution:
         print(self.climbStairs(4))
         print(self.climbStairs(5))
         print(self.climbStairs(8))
+=======
+        return 0
+
+    def test(self):
+        return 0
+>>>>>>> 091c811 (add solution 1 to problem 70)
 
 
 solution = Solution()

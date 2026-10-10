@@ -4,9 +4,8 @@ import math
 class Solution:
     def climbStairs(self, n: int) -> int:
         ways_to_climb = 0
-        for i in range((n // 2) + 1):
-            ways_to_climb += math.comb(n - i, i)
-            print(math.comb(n - i, i))
+        for i in range(n // 2):
+            ways_to_climb += math.factorial(n - i) // math.factorial(n - 2 * i)
 
         return ways_to_climb
 

@@ -1,9 +1,12 @@
+import random
+
+
 class Solution:
     def sortArray(self, nums: list[int]) -> list[int]:
         if len(nums) <= 1:
             return nums
 
-        pivot = nums[0]
+        pivot = nums[random.randint(0, len(nums) - 1)]
         smaller = []
         bigger = []
 
